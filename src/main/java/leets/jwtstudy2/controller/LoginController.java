@@ -36,10 +36,10 @@ public class LoginController {
         } catch (AuthenticationException e) {
             String errorMessage;
             if (e instanceof UsernameNotFoundException) {
-                errorMessage = "유저없음";
+                errorMessage = "존재하지 않는 유저입니다";
                 log.error(errorMessage);
             } else if (e instanceof BadCredentialsException) {
-                errorMessage = "비밀번호틀림";
+                errorMessage = "비밀번호가 틀렸습니다";
                 log.error(errorMessage);
             } else {
                 errorMessage = "로그인 정보를 다시 입력해주세요.";
