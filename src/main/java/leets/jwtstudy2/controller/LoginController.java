@@ -1,6 +1,6 @@
 package leets.jwtstudy2.controller;
 
-import leets.jwtstudy2.domain.UserLoinDTO;
+import leets.jwtstudy2.dto.UserLoinDTO;
 import leets.jwtstudy2.service.UserLoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -20,25 +20,6 @@ public class UserLoginService {
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userid, password);
         authenticationManager.authenticate(authenticationToken);
 
-        //여기서 loadByUsername 이 실행
-//        try {
-//            authenticationManager.authenticate(authenticationToken);
-//        } catch (AuthenticationException e) {
-//            String errorMessage;
-//            if (e instanceof UsernameNotFoundException) {
-//                errorMessage = "유저없음";
-//                System.out.println("errorMessage = " + errorMessage);
-//            } else if (e instanceof BadCredentialsException) {
-//                errorMessage = "비밀번호틀림";
-//                System.out.println("errorMessage = " + errorMessage);
-//            } else {
-//                errorMessage = "로그인 정보를 다시 입력해주세요.";
-//                System.out.println("errorMessage = " + errorMessage);
-//            }
-//        }
-        /*
-        인증이 완료되면 다음 코드 실행?
-         */
 
         String accessToken = jwtUtil.createAccessToken(userid);
         return accessToken;
