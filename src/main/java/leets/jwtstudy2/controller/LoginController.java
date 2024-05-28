@@ -9,12 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @Slf4j
 public class LoginController {
@@ -22,8 +22,8 @@ public class LoginController {
     private final UserLoginService userLoginService;
 
     @GetMapping("/login")
-    public String loginView() {
-        return "login";
+    public ResponseEntity<String> login(){
+        return ResponseEntity.ok("login");
     }
 
     @PostMapping("/login")

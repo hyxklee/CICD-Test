@@ -16,7 +16,6 @@ public class UserJoinController {
     @PostMapping("/signup")
     public String signup(AddUserRequest dto) {
         userJoinService.join(dto);
-
         return "ok";
     }
 
